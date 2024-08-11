@@ -11,6 +11,19 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
 
+final List<String> imageList = [
+  'assets/images/img1.jpg',
+  'assets/images/img2.jpg',
+  'assets/images/img3.jpg',
+  'assets/images/img4.jpg',
+  'assets/images/img5.jpg',
+  'assets/images/img6.jpg',
+  'assets/images/img7.jpg',
+  'assets/images/img8.jpg',
+  'assets/images/img9.jpg',
+  'assets/images/img10.jpg',
+];
+
 
 
 @override
@@ -52,6 +65,52 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
 
 
+
+
+            //IMAGES
+            SizedBox(
+        height: 533, // Adjust the height as needed
+        child: Padding(
+  padding: const EdgeInsets.symmetric(horizontal: 8.0), // Adjust the horizontal padding as needed
+  child: GridView.builder(
+    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      crossAxisCount: 2, // Two images per row
+      crossAxisSpacing: 8.0, // Spacing between the columns
+      mainAxisSpacing: 8.0, // Spacing between the rows
+      childAspectRatio: 0.5, // Set the aspect ratio to make the width equal
+    ),
+    itemCount: imageList.length, // Number of images
+    itemBuilder: (context, index) {
+      return Column(
+        children: [
+          Expanded(
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(16.0),
+              child: Image.asset(
+                imageList[index], // Use the asset image path from the list
+                fit: BoxFit.cover, // Fit the image to the container
+              ),
+            ),
+          ),
+          Align(
+          alignment: Alignment.centerRight,
+          child: InkWell(
+            onTap: () {
+              // Handle the tap event
+            },
+            child: const Icon(
+              Icons.more_horiz,),
+          ),
+        ),
+        ],
+      );
+    },
+  ),
+)
+
+      ),
+
+
             // Component3 (bottom area)
             Container(
 
@@ -77,6 +136,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                 IconButton(
                   icon: const Icon(Icons.sms),
+                  onPressed: () {},
+                ),
+                IconButton(
+                  icon: const Icon(Icons.circle),
                   onPressed: () {},
                 ),
 
