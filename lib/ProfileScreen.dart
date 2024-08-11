@@ -24,7 +24,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
         ),
         actions: [
           IconButton(onPressed: (){}, icon: Icon(Icons.share, color: Colors.black,)),
-        ]
+        ],
+
       ),
 
 
@@ -57,8 +58,42 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
           ElevatedButton(onPressed: () {}, child: Text('Edit Profile')),
 
-        ],)
-  
+
+            // TabBar and TabBarView
+      DefaultTabController(
+        length: 2, // Number of tabs
+        child: Column(
+          children: [
+            TabBar(
+              tabs: const [
+                Tab(text: 'Created'),
+                Tab(text: 'Saved'),
+              ],
+              labelColor: Colors.black, // Customize label color
+              indicatorColor: Colors.black, // Color of the selected tab underline
+              indicatorSize: TabBarIndicatorSize.label, // Shrinks the underline to fit the label
+              labelPadding: EdgeInsets.symmetric(horizontal: 30), // Reduce space between tabs
+              unselectedLabelColor: Colors.grey, // Color of unselected tabs
+              // Remove the bottom border of the TabBar
+              indicatorWeight: 2.0, // Thickness of the indicator line
+              isScrollable: true, // Allows the tabs to adjust based on content
+            ),
+            Container(
+              height: 200, // Adjust the height as needed
+              child: const TabBarView(
+                children: [
+                  // Content for 'Created' tab
+                  Center(child: Text('Created content goes here')),
+                  // Content for 'Saved' tab
+                  Center(child: Text('Saved content goes here')),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    ],
+  ),
 ),
 
 
