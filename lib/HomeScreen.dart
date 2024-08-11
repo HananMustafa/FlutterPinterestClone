@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterpinterestclone/ProfileScreen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key, required this.title});
@@ -140,7 +141,9 @@ final List<String> imageList = [
                 ),
                 IconButton(
                   icon: const Icon(Icons.circle),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>ProfileScreen(title: 'Profile Screen')));
+                  },
                 ),
 
 
