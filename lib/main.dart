@@ -13,9 +13,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Tourise',
+      title: 'Pinterest',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 0, 0, 0)),
+        scaffoldBackgroundColor: Colors.white,
+        colorScheme: ColorScheme.fromSwatch().copyWith(
+          primary: const Color.fromARGB(255, 0, 0, 0), // Set primary color to white
+          background: Colors.white, // Set background color to white
+        ),
         useMaterial3: true,
       ),
       home: HomeScreen(title: 'Pinterest')

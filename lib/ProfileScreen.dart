@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutterpinterestclone/CreatedSection.dart';
+import 'package:flutterpinterestclone/SavedScreen.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key, required this.title});
@@ -25,6 +27,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         actions: [
           IconButton(onPressed: (){}, icon: Icon(Icons.share, color: Colors.black,)),
         ],
+        
 
       ),
 
@@ -40,23 +43,48 @@ class _ProfileScreenState extends State<ProfileScreen> {
             backgroundImage: AssetImage('assets/images/img1.jpg'), // Load the image from assets
           ),
 
-          Text('Hanan Mustafa'),
+          Padding(padding: EdgeInsets.all(5),
+          child: Text('Hanan Mustafa', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),)),
 
-          Row(children: [
-            IconButton(onPressed: (){}, icon: Icon(Icons.logo_dev)),
-            Text('Hanan Mustafa'),
-          ],),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 5.0), // Add padding only below the Row
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  'assets/images/logo.png', // Path to your logo
+                  height: 18.0, // Adjust the height to match your design
+                  width: 18.0,  // Adjust the width to match your design
+                ),
+                SizedBox(width: 3.0), // Adjust spacing between the image and text
+                Text('Hanan Mustafa'),
+              ],
+            ),
+          ),
 
-          Row(children: [
-            //Follower Digit
-            Text('0'),
-            Text(' followers'),
-            Text(' . '),
-            Text('0'),
-            Text(' following'),
-          ],),
 
-          ElevatedButton(onPressed: () {}, child: Text('Edit Profile')),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 5.0),
+
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+              //Follower Digit
+              Text('0'),
+              Text(' followers'),
+              Text(' . '),
+              Text('0'),
+              Text(' following'),
+              ],),),
+
+          ElevatedButton(
+            onPressed: () {},
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Color.fromARGB(255, 236, 236, 236), // Set the background color to light grey
+            ),
+            child: Text('Edit Profile'),
+          ),
+
 
 
             // TabBar and TabBarView
@@ -79,13 +107,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
               isScrollable: true, // Allows the tabs to adjust based on content
             ),
             Container(
-              height: 200, // Adjust the height as needed
+              height: 273, // Adjust the height as needed
               child: const TabBarView(
                 children: [
                   // Content for 'Created' tab
-                  Center(child: Text('Created content goes here')),
+                  CreatedSection(),
                   // Content for 'Saved' tab
-                  Center(child: Text('Saved content goes here')),
+                  SavedScreen(),
                 ],
               ),
             ),

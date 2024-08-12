@@ -36,21 +36,28 @@ final List<String> imageList = [
         iconTheme: IconThemeData(
           color: Colors.white,
         ),
-        toolbarHeight: 30,
-        title: Container(
-          alignment: Alignment.center,
+        toolbarHeight: 30, // Adjust height if necessary
+        flexibleSpace: Center(
           child: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              Text(
+                'All',
+                style: TextStyle(fontSize: 15, color: Colors.black),
+              ),
+              SizedBox(height: 2), // Spacing between text and line
+              Container(
+                width: 20,
+                height: 2,
+                color: Colors.black,
+              ),
+            ],
+          ),
+        ),
+      ),
 
-            Text('All', style: TextStyle(fontSize: 15, color: Colors.black),),
-            Container(
-              width: 20,
-              height: 2,
-              color: Colors.black,
-            ),
-          ],)
-        ),
-        ),
 
 
 
