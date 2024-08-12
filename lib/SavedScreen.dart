@@ -91,11 +91,9 @@ class _SavedScreenState extends State<SavedScreen> {
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'Home',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.search),
-            label: 'Search',
           ),
           BottomNavigationBarItem(
             icon: Icon(
@@ -107,7 +105,6 @@ class _SavedScreenState extends State<SavedScreen> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.sms),
-            label: 'Messages',
           ),
           BottomNavigationBarItem(
             icon: InkWell(

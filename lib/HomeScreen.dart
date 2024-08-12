@@ -105,11 +105,9 @@ class _HomeScreenState extends State<HomeScreen> {
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'Home',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.search),
-            label: 'Search',
           ),
           BottomNavigationBarItem(
             icon: Icon(
@@ -117,11 +115,9 @@ class _HomeScreenState extends State<HomeScreen> {
               size: 40,
               color: Color.fromRGBO(54, 54, 54, 1),
             ),
-            label: '',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.sms),
-            label: 'Messages',
           ),
           BottomNavigationBarItem(
             icon: InkWell(
