@@ -139,11 +139,26 @@ final List<String> imageList = [
                   icon: const Icon(Icons.sms),
                   onPressed: () {},
                 ),
-                IconButton(
-                  icon: const Icon(Icons.circle),
-                  onPressed: () {
+                
+
+                InkWell(
+                  onTap: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>ProfileScreen(title: 'Profile Screen')));
                   },
+                  child: Container(
+                    padding: EdgeInsets.all(2), // Adjust the border thickness
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.black, // Border color
+                        width: 2, // Border width
+                      ),
+                      shape: BoxShape.circle,
+                    ),
+                    child: CircleAvatar(
+                      backgroundImage: AssetImage('assets/images/img1.jpg'),
+                      radius: 9, // Adjust the size of the icon
+                    ),
+                  ),
                 ),
 
 

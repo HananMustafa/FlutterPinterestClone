@@ -57,7 +57,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   width: 18.0,  // Adjust the width to match your design
                 ),
                 SizedBox(width: 3.0), // Adjust spacing between the image and text
-                Text('Hanan Mustafa'),
+                Text('HananMustafa'),
               ],
             ),
           ),
